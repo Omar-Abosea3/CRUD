@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <div action="" class="container">
+        <label for="pn">ProductName</label>
+        <input type="text" class="form-control mb-3" id="pn">
+    
+        <label for="pp">ProductPrice</label>
+        <input type="text" class="form-control mb-3" id="pp">
+    
+        <label for="pc">ProductCategory</label>
+        <input type="text" class="form-control mb-3" id="pc">
+    
+        <label for="pd">ProductDesc</label>
+        <input type="text" class="form-control mb-3" id="pd">
+
+        <button onclick="addNewElement()" id="addBtn" class="btn btn-outline-info">Add</button>
+
+        <input type="text" id="search" placeholder="search product" class="form-control w-75 m-auto text-center mt-5 mb-5" oninput="searchBar(this.value)">
+
+        <table class="table text-light">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Describtion</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="table">
+
+            </tbody>
+        </table>
+    </div>
+
+    
+
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
