@@ -31,16 +31,25 @@ function addNewElement(){
       desc:productDesc.value,
   }
   if(addBtn.innerHTML=="Add"){
-    allBroducts.push(product);
-  }else{
-    allBroducts.splice(mainIndex,1,product);
+    if(product.name != '' && product.price != '' && product.category != '' && product.desc != ''){
+        allBroducts.push(product);
+        clearProduct();
+    }else{
+        alert("Please fill all fields");
+    }
+    }else{
+    if(product.name != '' && product.price != '' && product.category != '' && product.desc != ''){
+        allBroducts.splice(mainIndex,1,product);
+        clearProduct();
+        resetAdd();
+    }else{
+        alert("Please fill all fields");
+    }
   }
   localStorage.setItem("allBroducts",JSON.stringify(allBroducts));
   console.log(allBroducts);
 // clearing after adding new object to array.
-  clearProduct();
   displayAllProducts();
-  resetAdd();
 }
 // clearing form
 function clearProduct(){
@@ -58,7 +67,7 @@ function displayAllProducts(){
     // lazem a3aref el variable elly hay5azen el data elly hada5alha gowa el function 3alashan maykararsh el mo7tawayat beta3et el kartonah we kol marah yedef el gedeed bas mayerga3sh yegeeb el 2eyam koleha men el awel. 
     var cartoona="";
     for (let i = 0; i < allBroducts.length; i++) {
-        cartoona+=`<tr>
+        cartoona+=`<tr class='overflow-x-scroll'>
         <td>${[i]}</td>
         <td>${allBroducts[i].name}</td>
         <td>${allBroducts[i].price}</td>
