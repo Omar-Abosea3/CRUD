@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Application</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bg-dark text-light">
-    <div action="" class="container">
+<body class="bg-dark overflow-x-hidden text-light">
+    <div class="container pt-5">
+        <h1 class="text-center text-light">CRUD Project</h1>
         <label for="pn">ProductName</label>
-        <input type="text" class="form-control mb-3" id="pn">
+        <input type="text" placeholder="Name" class="form-control mb-3" id="pn">
     
         <label for="pp">ProductPrice</label>
-        <input type="text" class="form-control mb-3" id="pp">
+        <input type="number" min="5" placeholder="Price" class="form-control mb-3" id="pp">
     
         <label for="pc">ProductCategory</label>
-        <input type="text" class="form-control mb-3" id="pc">
+        <input type="text" placeholder="Category" class="form-control mb-3" id="pc">
     
         <label for="pd">ProductDesc</label>
-        <input type="text" class="form-control mb-3" id="pd">
+        <input type="text" placeholder="Describtion" class="form-control mb-3" id="pd">
 
         <button onclick="addNewElement()" id="addBtn" class="btn btn-outline-info">Add</button>
 
-        <input type="text" id="search" placeholder="search product" class="form-control w-75 m-auto text-center mt-5 mb-5" oninput="searchBar(this.value)">
+        <input type="text" id="search" placeholder="search product by name" class="form-control w-75 m-auto text-center mt-5 mb-5" oninput="searchBar(this.value)">
 
+    </div>
+    <div class="container overflow-x-scroll">
         <table class="table text-light">
             <thead>
                 <tr>
@@ -38,7 +40,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody id="table">
+            <tbody id="table" class="overflow-auto">
 
             </tbody>
         </table>
